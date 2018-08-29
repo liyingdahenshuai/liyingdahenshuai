@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>array</title>
+</head>
+<body>
+    <span>请依次输入数组的值，每输入一个值点击提交，提交完所有数值后点击第二个button：</span>
+    <input type="text" id="input">
+    <button onclick="test()">提交</button>
+    <button onclick="test2()">计算删除重复的数之后的长度</button>
+    <script type="text/javascript">
+        var i = 0;
+        var array = [];
+        function test(){
+            var number = document.getElementById("input").value;
+            if(number%1==0){
+                array[i] = number;
+                i++;
+            }
+            else{
+                alert("请重新输入刚才的整数");
+            }
+            document.getElementById("input").focus();
+            document.getElementById("input").value = ""
+        }
+        function test2(){
+            var array1 = array.sort((a, b) => a - b);
+            alert(array1);
+            var array2 = [];
+            var z = 0;
+            for(j = 0 ;j<array1.length;j++){
+                if(array1[j] != array1[j+1]){
+                    array2[z]=array1[j];
+                    z++;
+                }
+            }
+            alert(array2.length);
+        }
+    </script>
+</body>
+</html>

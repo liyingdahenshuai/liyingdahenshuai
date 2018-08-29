@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回文数</title>
+</head>
+<body>
+    <span>请输入整数:</span>
+    <input type="text" id="input" placeholder="0">
+    <button id="button" onclick="test()">判断</button>
+    <script type="text/javascript">
+        function test(){
+            var number = document.getElementById("input").value;
+            var length = number.length;
+            if(number % 1 == 0){
+                if(number.length%2==1){
+                    for( i=0 ; i<=(length+1)/2; i++){
+                        if(i==(length+1)/2){
+                        alert("输入的数字是回文数");
+                        }
+                        else if(number[i]==number[length-i-1]){
+                            continue;
+                        }
+                        else{
+                            alert("输入的数字不是回文数！");
+                            break;
+                        }
+                    }
+                }
+                else{
+                    alert("输入的数字不是回文数！");
+                }
+            }
+            else{
+                alert("请输入整数！");
+            }
+        }
+    </script>
+</body>
+</html>
